@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://kit.fontawesome.com/c9a493eadc.js" crossorigin="anonymous"></script>
+    <title>Alarm Clock</title>
+</head>
+<body>
+    
+    <!-- <header>
+        <h1 id="heading">Alarm Clock</h1>
+    </header> -->
+
+    <!-- <div class="clock-body clock-upper-part"></div> -->
+
+    <div id="clock-body" class="clock-body">
+
+        <div class="digit-display">
+
+            <div class="digit-left"><span class="digit">0</span></div>
+            <div class="digit-right"><span class="digit">0</span></div>
+
+        </div>
+
+        <p class="separator-colon">:</p>
+
+        <div class="digit-display">
+
+            <div class="digit-left"><span class="digit">0</span></div>
+            <div class="digit-right"><span class="digit">0</span></div>
+
+        </div>
+
+        <p class="separator-colon">:</p>
+
+        <div class="digit-display">
+
+            <div class="digit-left"><span class="digit">0</span></div>
+            <div class="digit-right"><span class="digit">0</span></div>
+
+        </div>
+
+        <p>&nbsp;&nbsp;</p>
+
+        <div class="digit-display">
+
+            <div class="digit-left"><span class="digit">A</span></div>
+            <div class="digit-right"><span class="digit">M</span></div>
+
+        </div>
+
+
+    </div>
+
+    <div id="date-container" class="clock-body">
+
+        <!-- Information Display -->
+        <p>DATE:<span>&nbsp;14th February, 2022</span></p>
+
+    </div>
+
+    <div id="add-alarm" class="clock-body">
+
+        <input class="border" type="number" placeholder="HH" min="0" max="23" required>
+        <input class="border" type="number" placeholder="MM" min="0" max="59" required>
+        <input class="border" type="number" placeholder="SS" min="0" max="59" required>
+        <select class="border" name = "AM/PM" id="drop-down">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        <button>Set Alarm</button>
+
+    </div>
+
+    <div id="alarm-list" class="clock-body">
+
+        <!-- <p>No Alarms</p> -->
+
+        <ul id="list">
+
+            <li>
+                
+                <div id="alarm-list-left">
+
+                    <p><img src="./assets/images/clock-regular.svg"></p>                    
+                    <p><span>04:</span><span>05:</span><span>49 </span><span>PM</span></p>
+
+                </div>
+
+                <div id="alarm-list-right">
+
+                    <button>Delete</button>
+
+                </div>
+                
+            </li><hr class="line">
+
+            <li>
+                
+                <div id="alarm-list-left">
+
+                    <p><img src="./assets/images/clock-regular.svg"></p>                    
+                    <p class="margin"><span>04:</span><span>05:</span><span>49 </span><span>PM</span></p>
+
+                </div>
+
+                <div id="alarm-list-right">
+
+                    <button>Delete</button>
+
+                </div>
+                
+            </li><hr class="line">
+
+            <li>
+                
+                <div id="alarm-list-left">
+
+                    <p><img src="./assets/images/clock-regular.svg"></p>                    
+                    <p class="margin"><span>04:</span><span>05:</span><span>49 </span><span>PM</span></p>
+
+                </div>
+
+                <div id="alarm-list-right">
+
+                    <button>Delete</button>
+
+                </div>
+                
+            </li><hr class="line">
+
+            <li>
+                
+                <div id="alarm-list-left">
+
+                    <p><img src="./assets/images/clock-regular.svg"></p>                   
+                    <p class="margin"><span>04:</span><span>05:</span><span>49 </span><span>PM</span></p>
+
+                </div>
+
+                <div id="alarm-list-right">
+
+                    <button>Delete</button>
+
+                </div>
+                
+            </li><hr class="line">
+
+
+
+        </ul>
+
+    </div>
+
+    <!-- <div class="clock-body clock-lower-part"></div> -->
+
+
+    <script type="text/javascript" src="./index.js"></script>
+
+</body>
+</html>

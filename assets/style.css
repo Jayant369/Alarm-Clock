@@ -1,0 +1,226 @@
+body{
+    margin: 0;
+    font-family: monospace;
+    color: white;
+    background-color: black;
+}
+
+header{
+    padding: 15px;
+}
+
+#heading{
+    margin: 0;
+    text-align: center;
+    color: blueviolet;
+    font-size: 2rem;
+}
+
+#clock-body{
+    margin-top: 25px;
+    border-top-left-radius: 2rem;
+    /* border-bottom-left-radius: 2rem; */
+    border-top-right-radius: 2rem;
+    /* border-bottom-right-radius: 2rem; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: rgb(167, 161, 161); */
+    background-color: grey;
+}
+
+.digit-display{
+    width: 30%;
+    height: 80px;
+    display: flex;
+    background-color: blue;
+}
+
+.digit-left{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border: 0.5px solid white;
+}
+
+.digit-right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border: 0.5px solid white;
+}
+
+.digit{
+    font-size: 4rem;
+    margin: auto;
+    color: white;
+}
+
+.separator-colon{
+    color: black;
+    font-size: 1.7rem;
+    animation: fadeInOut 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#date-container{
+    background-color: rgb(167, 161, 161);
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+#date-container > p{
+    color: blue;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    /* animation: fadeInOut 1s ease-in-out infinite alternate; */
+}
+
+.clock-body{
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+    /* border: 1px solid white; */
+    width: 35%;
+    margin: auto;
+    padding: 25px;
+}
+
+#add-alarm{
+    display: flex;
+    justify-content: space-between;
+    border-left: 0.5px solid rgba(255, 255, 255, 0.5);
+    border-right: 0.5px solid rgba(255, 255, 255, 0.5);
+    /* background-color: rgb(167, 161, 161); */
+}
+
+#add-alarm > input{
+    width: 10%;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    /* border: none; */
+    /* border-bottom: 1px solid black; */
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#drop-down {
+    background-color: transparent;
+    color: white;
+    outline: none;
+}
+
+#drop-down option{
+    background-color: black;
+}
+
+.border{
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    border: 1px solid white;
+}
+
+#add-alarm button{
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.1rem;
+    color: white;
+    background-color: rgb(252, 75, 44);
+}
+
+#add-alarm button:active{
+    transform: translateY(1px);
+}
+
+#alarm-list{
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-left: 0.5px solid rgba(255, 255, 255, 0.5);
+    border-right: 0.5px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+#alarm-list p{
+    text-align: center;
+    margin: 0;
+    font-size: 1.2rem;
+
+}
+
+/* .clock-upper-part{
+    border: none;
+    width: 20%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: rgb(174, 228, 93);
+}
+
+.clock-lower-part{
+    border: none;
+    width: 25%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: rgb(174, 228, 93);
+} */
+
+#list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
+}
+
+li img{
+    width: 25px;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+    background-color: white;
+}
+
+#alarm-list-left{
+    display: flex;
+    width: 35%;
+    justify-content: space-around;
+}
+
+#alarm-list-right button{
+    padding: 10px 20px;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    border: 1px solid white;
+    border-radius: 0.5rem;
+}
+
+#alarm-list-right button:active{
+    transform: translateY(1px);
+}
+
+.line{
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
