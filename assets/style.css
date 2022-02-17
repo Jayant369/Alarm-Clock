@@ -2,7 +2,7 @@ body{
     margin: 0;
     font-family: monospace;
     color: white;
-    background-color: black;
+    background-color: rgb(44, 39, 39);
 }
 
 header{
@@ -30,36 +30,173 @@ header{
 }
 
 .digit-display{
-    width: 30%;
+    width: 120px;
     height: 80px;
     display: flex;
+    background-color: skyblue;
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.clock-timer{
     background-color: blue;
+}
+
+.amPM{
+    color: black;
+    background-color: cyan;
+}
+
+.margin-none{
+    margin: 0;
 }
 
 .digit-left{
     width: 50%;
-    display: flex;
-    justify-content: center;
-    border: 0.5px solid white;
+    border: 1px solid black;
+    border-right: 0.5px solid black;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .digit-right{
     width: 50%;
-    display: flex;
-    justify-content: center;
-    border: 0.5px solid white;
+    border: 1px solid black;
+    border-left: 0.5px solid black;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
-.digit{
-    font-size: 4rem;
-    margin: auto;
-    color: white;
+/* Hours Left Dailer */
+.hrs-left-dialer-next{
+    position: absolute;
+    left: 10px;
+    top: 75px;
 }
+
+.hrs-left-dialer-next-animate{
+    transition: all 0.5s;
+    left: 8.5px;
+    top: 0px;
+}
+
+/* End of Hours Left Dialer */
+
+/* Hours Right Dailer */
+.hrs-right-dialer-next{
+    position: absolute;
+    left: 10px;
+    top: 75px;
+}
+
+.hrs-right-dialer-next-animate{
+    transition: all 0.5s;
+    left: 8.5px;
+    top: 0px;
+}
+
+/* End of Hours Right Dialer */
+
+
+/* Minutes Left Dailer */
+.min-left-dialer-next{
+    position: absolute;
+    left: 10px;
+    top: 75px;
+}
+
+.min-left-dialer-next-animate{
+    transition: all 0.5s;
+    left: 8.5px;
+    top: 0px;
+}
+
+/* End of Minutes Left Dialer */
+
+
+/* Minutes Right Dailer */
+.min-right-dialer-next{
+    position: absolute;
+    left: 10px;
+    top: 75px;
+}
+
+.min-right-dialer-next-animate{
+    transition: all 0.5s;
+    left: 8.5px;
+    top: 0px;
+}
+
+/* End of Minutes Right Dialer */
+
+
+/* Seconds Left Dailer */
+.digit-dialer-left{
+    position: absolute;
+    left: 10px;
+    top: 75px;
+}
+
+.digit-dialer-left-animate{
+    transition: all 0.5s;
+    left: 8.5px;
+    top: 0px;
+}
+/* End of Seconds Left Dialer */
+
+
+/* Seconds Right Dialer */
+.digit-dialer-right{
+    position: absolute;
+    left: 10px;
+    top: 75px;
+}
+
+.digit-dialer-right-animate{
+    transition: all 0.5s;
+    left: 8.5px;
+    top: 0px;
+}
+/* End of Seconds Right Dailer */
+
+/* AM or PM (left)  */
+.amPM-left-dialer-next{
+    position: absolute;
+    left: 10px;
+    top: 75px;
+}
+
+.amPM-left-dialer-next-animate{
+    transition: all 0.5s;
+    left: 8.5px;
+    top: 0px;
+}
+
+/* AM or PM (right) */
+.amPM-right-dialer-next{
+    position: absolute;
+    left: 10px;
+    top: 75px;
+}
+
+.amPM-right-dialer-next-animate{
+    transition: all 0.5s;
+    left: 8.5px;
+    top: 0px;
+}
+
 
 .separator-colon{
     color: black;
     font-size: 1.7rem;
-    animation: fadeInOut 0.8s ease-in-out infinite alternate;
+    animation: fadeInOut 1s ease-in-out infinite alternate;
 }
 
 @keyframes fadeInOut{
@@ -74,14 +211,18 @@ header{
 #date-container{
     background-color: rgb(167, 161, 161);
     border-top: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-#date-container > p{
     color: blue;
-    margin: 0;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
+}
+
+#date-container > p{
+    /* color: blue; */
+    margin: 0;
+    /* font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center; */
     /* animation: fadeInOut 1s ease-in-out infinite alternate; */
 }
 
@@ -96,9 +237,9 @@ header{
 #add-alarm{
     display: flex;
     justify-content: space-between;
-    border-left: 0.5px solid rgba(255, 255, 255, 0.5);
-    border-right: 0.5px solid rgba(255, 255, 255, 0.5);
-    /* background-color: rgb(167, 161, 161); */
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: black;
 }
 
 #add-alarm > input{
@@ -109,6 +250,10 @@ header{
     color: white;
     /* border: none; */
     /* border-bottom: 1px solid black; */
+}
+
+#add-alarm button:hover{
+    color: black;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -153,9 +298,10 @@ input[type=number] {
 #alarm-list{
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
-    border-left: 0.5px solid rgba(255, 255, 255, 0.5);
-    border-right: 0.5px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: black;
 }
 
 #alarm-list p{
@@ -213,6 +359,11 @@ li img{
     /* border: 1px solid rgba(0, 0, 0, 0.2); */
     border: 1px solid white;
     border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+#alarm-list-right button:hover{
+    color: red;
 }
 
 #alarm-list-right button:active{
