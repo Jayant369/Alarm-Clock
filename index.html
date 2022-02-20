@@ -1,203 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- HEAD SECTION -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+
+    <!-- BOOTSTRAP LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- CSS LINK -->
     <link rel="stylesheet" href="./assets/style.css">
-    <script src="https://kit.fontawesome.com/c9a493eadc.js" crossorigin="anonymous"></script>
-    <title>Alarm Clock</title>
+
+    <!-- TAB NAME -->
+    <title>Alarm Clock Development</title>
+
 </head>
+<!-- END OF HEAD SECTION -->
+
+
+<!-- BODY -->
 <body onload="clock()">
+
+    <!-- Full Clock Body -->
+    <div id="full-clock-body">
+
+        <!-- Alarm Stop Button -->
+        <div id="alarm-stop-button" class="container-fluid col-11 col-md-8 col-lg-5 p-4">
+
+            <button id="stop-alarm" type="submit">Stop Alarm</button>
+
+        </div>
+
+        <!-- Clock timer display section -->
+        <div id="clock-body" class="container col-11 col-md-8 col-lg-5 p-4">
+
+            <!-- Hours Clock Dialer -->
+            <div class="digit-display clock-timer">
+
+                <div class="digit-left">
+                    <p class="hrs-left-dialer-current margin-none"></p>
+                    <p class="hrs-left-dialer-next margin-none timer-color"></p>
+                </div>
+
+                <div class="digit-right">
+                    <p class="hrs-right-dialer-current margin-none"></p>
+                    <p class="hrs-right-dialer-next margin-none timer-color"></p>
+                </div>
+
+            </div>
+            <!-- End of Hours Clock Dialer -->
+
+
+            <!-- Hour and Minute separator -->
+            <p class="separator-colon">:</p>
+
+
+            <!-- Minutes Clock Dialer -->
+            <div class="digit-display clock-timer">
+
+                <div class="digit-left">
+                    <p class="min-left-dialer-current margin-none"></p>
+                    <p class="min-left-dialer-next margin-none timer-color"></p>
+                </div>
+
+                <div class="digit-right">
+                    <p class="min-right-dialer-current margin-none"></p>
+                    <p class="min-right-dialer-next margin-none timer-color"></p>
+                </div>
+
+            </div>
+            <!-- End of Minutes Clock Dialer -->
+
+
+            <!-- Minute and seconds separator -->
+            <p class="separator-colon">:</p>
+
+
+            <!-- Seconds Clock Dialer -->
+            <div class="digit-display clock-timer">
+
+                <div class="digit-left">
+                    <p class="currentSecondsLeft margin-none"></p>
+                    <p class="digit-dialer-left margin-none timer-color"></p>
+                </div>
+
+                <div class="digit-right">
+                    <p class="currentSecondsRight margin-none"></p>
+                    <p class="digit-dialer-right margin-none timer-color"></p>
+                </div>
+
+            </div>
+            <!-- End of Seconds Clock Dialer -->
+
+
+            <p>&nbsp;&nbsp;</p>
+
+
+             <!-- AM / PM -->
+            <div class="digit-display clock-timer">
+
+                <div class="digit-left amPM">
+                    <p class="amPM-left-dialer-current margin-none"></p>
+                    <p class="amPM-left-dialer-next margin-none"></p>
+                </div>
+
+                <div class="digit-right amPM">
+                    <p class="amPM-right-dialer-current margin-none"></p>
+                    <p class="amPM-right-dialer-next margin-none"></p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Additional Display info -->
+        <div id="display-details" class="container col-11 col-md-8 col-lg-5 p-4">
+            <p>Hours</p>
+            <p>Minutes</p>
+            <p>Seconds</p>
+        </div>
+
+
+        <!-- Date Display -->
+        <div id="date-container" class="container col-11 col-md-8 col-lg-5 p-4">
+
+            <!-- Information Display -->
+            <p id="display-info"></p>
     
-    <!-- <header>
-        <h1 id="heading">Alarm Clock</h1>
-    </header> -->
-
-    <!-- <div class="clock-body clock-upper-part"></div> -->
-
-    <div id="clock-body" class="clock-body">
-
-        <!-- Hours Clock Dialer -->
-        <div class="digit-display clock-timer">
-
-            <div class="digit-left">
-                <p class="hrs-left-dialer-current margin-none"></p>
-                <p class="hrs-left-dialer-next margin-none"></p>
-            </div>
-
-            <div class="digit-right">
-                <p class="hrs-right-dialer-current margin-none"></p>
-                <p class="hrs-right-dialer-next margin-none"></p>
-            </div>
-
-        </div>
-        <!-- End of Hours Clock Dialer -->
-
-        <p class="separator-colon">:</p>
-
-        <!-- Minutes Clock Dialer -->
-        <div class="digit-display clock-timer">
-
-            <div class="digit-left">
-                <p class="min-left-dialer-current margin-none"></p>
-                <p class="min-left-dialer-next margin-none"></p>
-            </div>
-
-            <div class="digit-right">
-                <p class="min-right-dialer-current margin-none"></p>
-                <p class="min-right-dialer-next margin-none"></p>
-            </div>
-
-        </div>
-        <!-- End of Minutes Clock Dialer -->
-
-        <p class="separator-colon">:</p>
-
-        <!-- Seconds Clock Dialer -->
-        <div class="digit-display clock-timer">
-
-            <div class="digit-left">
-                <p class="currentSecondsLeft margin-none"></p>
-                <p class="digit-dialer-left margin-none"></p>
-            </div>
-
-            <div class="digit-right">
-                <p class="currentSecondsRight margin-none"></p>
-                <p class="digit-dialer-right margin-none"></p>
-            </div>
-
-        </div>
-        <!-- End of Seconds Clock Dialer -->
-
-        <p>&nbsp;&nbsp;</p>
-
-        <!-- AM / PM -->
-        <div class="digit-display amPM">
-
-            <div class="digit-left">
-                <p class="amPM-left-dialer-current margin-none"></p>
-                <p class="amPM-left-dialer-next margin-none"></p>
-            </div>
-
-            <div class="digit-right">
-                <p class="amPM-right-dialer-current margin-none"></p>
-                <p class="amPM-right-dialer-next margin-none"></p>
-            </div>
-
         </div>
 
 
-    </div>
+        <!-- Set Alarm -->
+        <div id="add-alarm" class="container col-11 col-md-8 col-lg-5 p-4">
 
-    <div id="date-container" class="clock-body">
-
-        <!-- Information Display -->
-        <p>DATE:<span>&nbsp;14th February, 2022</span></p>
-
-    </div>
-
-    <div id="add-alarm" class="clock-body">
-
-        <input class="border" type="number" placeholder="HH" min="0" max="23" required>
-        <input class="border" type="number" placeholder="MM" min="0" max="59" required>
-        <input class="border" type="number" placeholder="SS" min="0" max="59" required>
-        <select class="border" name = "AM/PM" id="drop-down">
-            <option value="AM">AM</option>
-            <option value="PM">PM</option>
-        </select>
-        <button>Set Alarm</button>
-
-    </div>
-
-    <div id="alarm-list" class="clock-body">
-
-        <!-- <p>No Alarms</p> -->
-
-        <ul id="list">
-
-            <li>
-                
-                <div id="alarm-list-left">
-
-                    <p><img src="./assets/images/clock-regular.svg"></p>                    
-                    <p><span>04:</span><span>05:</span><span>49 </span><span>PM</span></p>
-
-                </div>
-
-                <div id="alarm-list-right">
-
-                    <button>Delete</button>
-
-                </div>
-                
-            </li><hr class="line">
-
-            <li>
-                
-                <div id="alarm-list-left">
-
-                    <p><img src="./assets/images/clock-regular.svg"></p>                    
-                    <p class="margin"><span>04:</span><span>05:</span><span>49 </span><span>PM</span></p>
-
-                </div>
-
-                <div id="alarm-list-right">
-
-                    <button>Delete</button>
-
-                </div>
-                
-            </li><hr class="line">
-
-            <li>
-                
-                <div id="alarm-list-left">
-
-                    <p><img src="./assets/images/clock-regular.svg"></p>                    
-                    <p class="margin"><span>04:</span><span>05:</span><span>49 </span><span>PM</span></p>
-
-                </div>
-
-                <div id="alarm-list-right">
-
-                    <button>Delete</button>
-
-                </div>
-                
-            </li><hr class="line">
-
-            <li>
-                
-                <div id="alarm-list-left">
-
-                    <p><img src="./assets/images/clock-regular.svg"></p>                   
-                    <p class="margin"><span>04:</span><span>05:</span><span>49 </span><span>PM</span></p>
-
-                </div>
-
-                <div id="alarm-list-right">
-
-                    <button>Delete</button>
-
-                </div>
-                
-            </li><hr class="line">
+            <input id="hours-input" class="border" type="number" placeholder="HH" min="0" max="23" required>
+            <input id="minutes-input" class="border" type="number" placeholder="MM" min="0" max="59" required>
+            <input id="seconds-input" class="border" type="number" placeholder="SS" min="0" max="59" required>
+            <select class="border" name = "AM/PM" id="drop-down">
+                <option value="AM" selected>AM</option>
+                <option value="PM">PM</option>
+            </select>
+            <button id="set-alarm-button">Set Alarm</button>
+    
+        </div>
 
 
-
-        </ul>
+        <!-- All Alarm Lists -->
+        <div id="alarm-list" class="container col-11 col-md-8 col-lg-5 pt-3 pb-2">
+    
+            <ul id="list">
+    
+                <!-- <li>
+                    
+                    <div id="alarm-list-left">
+    
+                        <p><img src="./assets/images/clock-regular.svg"></p>                    
+                        <p><span>04:</span><span>05:</span><span>49 </span><span>PM</span></p>
+    
+                    </div>
+    
+                    <div id="alarm-list-right">
+    
+                        <button id= "delete-alarm-button" data-id = "1">Delete</button>
+    
+                    </div>
+                    
+                </li> -->
+                <!-- <hr class="line"> -->
+    
+            </ul>
+    
+        </div>
 
     </div>
 
-    <!-- <div class="clock-body clock-lower-part"></div> -->
+
+    <!-- Alarm Sound -->
+    <audio id="myAudio">
+        <source src="./assets/music/Alarm-ringtone.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
 
-    <!-- <script type="text/javascript" src="./index.js"></script> -->
-    <script type="text/javascript" src="./test.js"></script>
+     <script type="text/javascript" src="./index.js"></script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
 
-</body>
-</html>
+     <!-- BOOTSRAP JS LINK -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ 
+
+ </body>
+<!-- END OF BODY -->
+ 
+ </html>
