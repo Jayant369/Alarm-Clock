@@ -79,7 +79,13 @@ function clock(){
     secondsInterval = setInterval(runSecondsClock, 1000);
     minutesInterval = setInterval(runMinutesClock, 1000);
     hoursInterval = setInterval(runHoursClock, 1000);
+    pageLoader = setInterval(refreshPage, 360000);
 
+}
+
+// Refresh Page
+function refreshPage(){
+    location.reload();
 }
 
 // SECONDS FUNCTIONALITY
@@ -317,7 +323,7 @@ if(tempDate == 1){
     displayInfo.innerHTML = `Date: ${date}st ${monthName}, ${year}`;
 }
 else if(tempDate == 2){
-    displayInfo.innerHTML = `Date: ${date}rd ${monthName}, ${year}`;
+    displayInfo.innerHTML = `Date: ${date}nd ${monthName}, ${year}`;
 }
 else if(tempDate == 3){
     displayInfo.innerHTML = `Date: ${date}rd ${monthName}, ${year}`;
@@ -351,6 +357,14 @@ function handleClickListener(e){
         let secsInput = document.getElementById('seconds-input').value;
         let amPmInput = document.getElementById('drop-down').value;
 
+        // Check whether all details are fields are filled or not
+        if(!hrsInput || !minsInput || !secsInput || !amPmInput){
+
+            showNotification('Please fill all the required fields');
+            return;
+
+        }
+
         if(hrsInput > 23){
             showNotification('Invalid Hour Input');
             return;
@@ -367,14 +381,6 @@ function handleClickListener(e){
         hrsInput = ("0" + hrsInput).slice(-2);
         minsInput = ("0" + minsInput).slice(-2);
         secsInput = ("0" + secsInput).slice(-2);
-
-        // Check whether all details are fields are filled or not
-        if(!hrsInput || !minsInput || !secsInput || !amPmInput){
-
-            showNotification('Please fill all the required fields');
-            return;
-
-        }
         
         const inputAlarmData = {
             hoursInput: hrsInput,
@@ -384,6 +390,10 @@ function handleClickListener(e){
             id: Date.now(),
             completed: false
         }
+
+        hrsInput.value = '';
+        minsInput.value = '';
+        secsInput.value = '';
 
         // Call add alarm function
         addAlarms(inputAlarmData);
@@ -433,7 +443,7 @@ function showNotification(text){
             displayInfo.innerHTML = `Date: ${date}st ${monthName}, ${year}`;
         }
         else if(tempDate == 2){
-            displayInfo.innerHTML = `Date: ${date}rd ${monthName}, ${year}`;
+            displayInfo.innerHTML = `Date: ${date}nd ${monthName}, ${year}`;
         }
         else if(tempDate == 3){
             displayInfo.innerHTML = `Date: ${date}rd ${monthName}, ${year}`;
@@ -523,7 +533,7 @@ function addTaskToDOM(alarm){
         <p><span>${alarm.hoursInput}:</span><span>${alarm.minutesInput}:</span><span>${alarm.secondsInput} </span><span>${alarm.ampm}</span></p>
     
     </div>
-    
+
     <div id="alarm-list-right">
     
         <button id= "delete-alarm-button" data-id = "${alarm.id}">Delete</button>
@@ -616,7 +626,7 @@ function alarmOn(){
             displayInfo.innerHTML = `Date: ${date}st ${monthName}, ${year}`;
         }
         else if(tempDate == 2){
-            displayInfo.innerHTML = `Date: ${date}rd ${monthName}, ${year}`;
+            displayInfo.innerHTML = `Date: ${date}nd ${monthName}, ${year}`;
         }
         else if(tempDate == 3){
             displayInfo.innerHTML = `Date: ${date}rd ${monthName}, ${year}`;

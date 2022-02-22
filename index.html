@@ -23,9 +23,6 @@
 <!-- BODY -->
 <body onload="clock()">
 
-    <!-- Full Clock Body -->
-    <div id="full-clock-body">
-
         <!-- Alarm Stop Button -->
         <div id="alarm-stop-button" class="container-fluid col-11 col-md-8 col-lg-5 p-4">
 
@@ -135,9 +132,10 @@
         <!-- Set Alarm -->
         <div id="add-alarm" class="container col-11 col-md-8 col-lg-5 p-4">
 
-            <input id="hours-input" class="border" type="number" placeholder="HH" min="0" max="23" required>
-            <input id="minutes-input" class="border" type="number" placeholder="MM" min="0" max="59" required>
-            <input id="seconds-input" class="border" type="number" placeholder="SS" min="0" max="59" required>
+            <input id="hours-input" class="border" type="number" onfocus="this.value = ''" placeholder="HH" min="0" max="23" required>
+            <input id="minutes-input" class="border" type="number" onfocus="this.value = ''" placeholder="MM" min="0" max="59" required>
+            <input id="seconds-input" class="border" type="number" onfocus="this.value = ''" placeholder="SS" min="0" max="59" required>
+
             <select class="border" name = "AM/PM" id="drop-down">
                 <option value="AM" selected>AM</option>
                 <option value="PM">PM</option>
@@ -152,7 +150,7 @@
     
             <ul id="list">
     
-                <!-- <li>
+                <li>
                     
                     <div id="alarm-list-left">
     
@@ -167,14 +165,12 @@
     
                     </div>
                     
-                </li> -->
+                </li>
                 <!-- <hr class="line"> -->
     
             </ul>
     
         </div>
-
-    </div>
 
 
     <!-- Alarm Sound -->

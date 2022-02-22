@@ -7,9 +7,9 @@ body{
 }
 
 /* Shake effect when alarm goes on */
-#full-clock-body-animate{
+/* #full-clock-body-animate{
     animation: shake 0.2s ease-in-out infinite alternate;
-}
+} */
 
 @keyframes shake{
     0%{
@@ -378,6 +378,7 @@ body{
     border-right: 1px solid rgba(255, 255, 255, 0.5);
     background-color: rgb(104, 27, 177);
     border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
 }
 
 #add-alarm > input{
