@@ -1,30 +1,50 @@
-/* Body */
+/* ********** Body ********** */
 body{
     margin: 0;
     font-family: monospace;
     color: white;
     background-color: blueviolet;
 }
+/* ********** End of Body ********** */
 
-/* Shake effect when alarm goes on */
-/* #full-clock-body-animate{
-    animation: shake 0.2s ease-in-out infinite alternate;
-} */
 
-@keyframes shake{
-    0%{
-        transform: translateX(0px);
-    }
-    50%{
-        transform: translateX(5px);
-    }
-    100%{
-        transform: translateX(-5px);
-    }
+/* ********** Alarm Stop Button ********** */
+#alarm-stop-button{
+    text-align: center;
+    margin-top: 25px;
+    position: relative;
+    top: 100%;
+    padding: 0 !important;
 }
-/* End of shake effect */
 
-/* Clock Timer Body */
+#stop-alarm{
+    border: none;
+    margin: 0;
+    border-radius: 0.5rem;
+    padding: 10px 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: rgb(216, 47, 47);
+    color: white;
+}
+
+#stop-alarm:hover{
+    color: black;
+    z-index: -1;
+}
+
+#stop-alarm:active{
+    transform: translateY(500px) translateZ(50px);
+}
+
+#stop-alarm:active{
+    transform: translateY(1px);
+}
+
+/* ********** End of Alarm Stop Button ********** */
+
+
+/* ********** Clock Timer Body ********** */
 #clock-body{
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
@@ -123,8 +143,8 @@ body{
     left: 11.5px;
     top: 0px;
 }
-
 /* End of Hours Left Dialer */
+
 
 /* Hours Right Dailer */
 .hrs-right-dialer-next{
@@ -138,8 +158,8 @@ body{
     left: 11.5px;
     top: 0px;
 }
-
 /* End of Hours Right Dialer */
+
 
 /* Minutes Left Dailer */
 .min-left-dialer-next{
@@ -153,7 +173,6 @@ body{
     left: 11.5px;
     top: 0px;
 }
-
 /* End of Minutes Left Dialer */
 
 
@@ -169,17 +188,17 @@ body{
     left: 11.5px;
     top: 0px;
 }
-
 /* End of Minutes Right Dialer */
 
+
 /* Seconds Left Dailer */
-.digit-dialer-left{
+.sec-left-dialer-next{
     position: absolute;
     left: 10px;
     top: 75px;
 }
 
-.digit-dialer-left-animate{
+.sec-left-dialer-next-animate{
     transition: all 0.5s;
     left: 11.5px;
     top: 0px;
@@ -188,18 +207,19 @@ body{
 
 
 /* Seconds Right Dialer */
-.digit-dialer-right{
+.sec-right-dialer-next{
     position: absolute;
     left: 10px;
     top: 75px;
 }
 
-.digit-dialer-right-animate{
+.sec-right-dialer-next-animate{
     transition: all 0.5s;
     left: 11.5px;
     top: 0px;
 }
 /* End of Seconds Right Dailer */
+
 
 /* AM or PM (left)  */
 .amPM-left-dialer-next{
@@ -215,6 +235,7 @@ body{
     top: 0px;
 }
 
+
 /* AM or PM (right) */
 .amPM-right-dialer-next{
     position: absolute;
@@ -227,6 +248,7 @@ body{
     left: 8.5px;
     top: 0px;
 }
+
 
 /* Seperator between (hrs : mins: secs) */
 .separator-colon{
@@ -245,7 +267,10 @@ body{
     }
 }
 
-/* Date Container */
+/* ************ End of Clock Timer Body ********** */
+
+
+/* ********** Date Container (Dsiplay Panel) ********** */
 #date-container{
     background-color: transparent;
     border-top: 1px solid rgba(0, 0, 0, 0.4);
@@ -336,41 +361,10 @@ body{
 #date-container > p{
     margin: 0;
 }
+/* ********** End of Date Container (Dsiplay Panel) ********** */
 
-/* Alarm Stop Button */
-#alarm-stop-button{
-    text-align: center;
-    margin-top: 25px;
-    position: relative;
-    top: 100%;
-    padding: 0 !important;
-}
 
-#stop-alarm{
-    border: none;
-    margin: 0;
-    border-radius: 0.5rem;
-    padding: 10px 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: rgb(216, 47, 47);
-    color: white;
-}
-
-#stop-alarm:hover{
-    color: black;
-    z-index: -1;
-}
-
-#stop-alarm:active{
-    transform: translateY(500px) translateZ(50px);
-}
-
-#stop-alarm:active{
-    transform: translateY(1px);
-}
-
-/* Set alarms on clock */
+/* ********** Set alarms on clock ********** */
 #add-alarm{
     display: flex;
     justify-content: space-between;
@@ -439,7 +433,10 @@ input[type=number] {
     transform: translateY(1px);
 }
 
-/* Alarm List */
+/* ********** End of Set alarms on clock ********** */
+
+
+/* ********** Alarm List ********** */
 #alarm-list{
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
@@ -502,8 +499,4 @@ li img{
     transform: translateY(1px);
 }
 
-.line{
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
+/* ********** End of Alarm List ********** */

@@ -52,7 +52,7 @@ Below is the image provided for the reference that how Alarm Clock looks like:
 - ### <ins>Stop an alarm </ins>
     <br />
 
-    1. When the alarm time is reached and clock started to produce an alarm sound. User can **stop** the alarm by pressig the **Stop Alarm** button.
+    1. When the alarm time is reached and clock started to produce an alarm sound. User can **stop** the alarm by pressing the **Stop Alarm** button.
 
     <br />
 

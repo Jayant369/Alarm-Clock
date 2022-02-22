@@ -3,6 +3,7 @@
 
 <!-- HEAD SECTION -->
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,13 +38,17 @@
             <div class="digit-display clock-timer">
 
                 <div class="digit-left">
+
                     <p class="hrs-left-dialer-current margin-none"></p>
                     <p class="hrs-left-dialer-next margin-none timer-color"></p>
+
                 </div>
 
                 <div class="digit-right">
+
                     <p class="hrs-right-dialer-current margin-none"></p>
                     <p class="hrs-right-dialer-next margin-none timer-color"></p>
+
                 </div>
 
             </div>
@@ -58,13 +63,17 @@
             <div class="digit-display clock-timer">
 
                 <div class="digit-left">
+
                     <p class="min-left-dialer-current margin-none"></p>
                     <p class="min-left-dialer-next margin-none timer-color"></p>
+
                 </div>
 
                 <div class="digit-right">
+
                     <p class="min-right-dialer-current margin-none"></p>
                     <p class="min-right-dialer-next margin-none timer-color"></p>
+
                 </div>
 
             </div>
@@ -79,13 +88,17 @@
             <div class="digit-display clock-timer">
 
                 <div class="digit-left">
-                    <p class="currentSecondsLeft margin-none"></p>
-                    <p class="digit-dialer-left margin-none timer-color"></p>
+
+                    <p class="sec-left-dialer-current margin-none"></p>
+                    <p class="sec-left-dialer-next margin-none timer-color"></p>
+
                 </div>
 
                 <div class="digit-right">
-                    <p class="currentSecondsRight margin-none"></p>
-                    <p class="digit-dialer-right margin-none timer-color"></p>
+
+                    <p class="sec-right-dialer-current margin-none"></p>
+                    <p class="sec-right-dialer-next margin-none timer-color"></p>
+
                 </div>
 
             </div>
@@ -99,58 +112,79 @@
             <div class="digit-display clock-timer">
 
                 <div class="digit-left amPM">
+
                     <p class="amPM-left-dialer-current margin-none"></p>
                     <p class="amPM-left-dialer-next margin-none"></p>
+
                 </div>
 
                 <div class="digit-right amPM">
+
                     <p class="amPM-right-dialer-current margin-none"></p>
                     <p class="amPM-right-dialer-next margin-none"></p>
+
                 </div>
 
             </div>
+            <!-- End of AM / PM -->
 
         </div>
 
         <!-- Additional Display info -->
         <div id="display-details" class="container col-11 col-md-8 col-lg-5 p-4">
+
             <p>Hours</p>
             <p>Minutes</p>
             <p>Seconds</p>
+
         </div>
+        <!-- End of Additional Display info -->
 
 
-        <!-- Date Display -->
+        <!-- Date Display Panel -->
         <div id="date-container" class="container col-11 col-md-8 col-lg-5 p-4">
 
             <!-- Information Display -->
             <p id="display-info"></p>
     
         </div>
+        <!-- End of Date Display Panel -->
 
 
-        <!-- Set Alarm -->
+        <!-- Set Alarm Section -->
         <div id="add-alarm" class="container col-11 col-md-8 col-lg-5 p-4">
 
+            <!-- HH Input field -->
             <input id="hours-input" class="border" type="number" onfocus="this.value = ''" placeholder="HH" min="0" max="23" required>
+
+            <!-- MM Input field -->
             <input id="minutes-input" class="border" type="number" onfocus="this.value = ''" placeholder="MM" min="0" max="59" required>
+
+            <!-- SS Input field -->
             <input id="seconds-input" class="border" type="number" onfocus="this.value = ''" placeholder="SS" min="0" max="59" required>
 
+            <!-- AM/PM Dropdown -->
             <select class="border" name = "AM/PM" id="drop-down">
+                
                 <option value="AM" selected>AM</option>
                 <option value="PM">PM</option>
+
             </select>
+
+            <!-- Set Alarm Button -->
             <button id="set-alarm-button">Set Alarm</button>
     
         </div>
+        <!-- End of set alarm section -->
 
 
-        <!-- All Alarm Lists -->
+        <!-- All Alarm Lists Section -->
         <div id="alarm-list" class="container col-11 col-md-8 col-lg-5 pt-3 pb-2">
     
             <ul id="list">
     
-                <li>
+                <!-- Dummy Alarm List  -->
+                <!-- <li>
                     
                     <div id="alarm-list-left">
     
@@ -165,21 +199,25 @@
     
                     </div>
                     
-                </li>
-                <!-- <hr class="line"> -->
+                </li> -->
     
             </ul>
     
         </div>
+        <!-- End of all alarm lists section -->
 
 
     <!-- Alarm Sound -->
     <audio id="myAudio">
+
         <source src="./assets/music/Alarm-ringtone.mp3" type="audio/mp3">
         Your browser does not support the audio element.
+
     </audio>
+    <!-- End of alarm sound -->
 
 
+    <!-- JAVASCRIPT LINK -->
      <script type="text/javascript" src="./index.js"></script>
 
 

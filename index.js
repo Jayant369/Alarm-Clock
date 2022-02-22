@@ -15,10 +15,10 @@ var minRightCurrent = document.querySelector('.min-right-dialer-current');
 var minRightNext = document.querySelector('.min-right-dialer-next');
 
 // SECONDS
-var currentSecondsRight = document.querySelector('.currentSecondsRight');
-var nextSecondsRight = document.querySelector('.digit-dialer-right');
-var currentSecondsLeft = document.querySelector('.currentSecondsLeft');
-var nextSecondsLeft = document.querySelector('.digit-dialer-left');
+var currentSecondsRight = document.querySelector('.sec-right-dialer-current');
+var nextSecondsRight = document.querySelector('.sec-right-dialer-next');
+var currentSecondsLeft = document.querySelector('.sec-left-dialer-current');
+var nextSecondsLeft = document.querySelector('.sec-left-dialer-next');
 
 // AM or PM
 var amPMLeftCurrent = document.querySelector('.amPM-left-dialer-current');
@@ -104,11 +104,11 @@ function runSecondsClock(){
             if(tempSecondsCounter > 4){
                 tempSecondsCounter = 0;
                 nextSecondsLeft.innerHTML = tempSecondsCounter;
-                nextSecondsLeft.classList.add('digit-dialer-left-animate');
+                nextSecondsLeft.classList.add('sec-left-dialer-next-animate');
             }
             else{
                 nextSecondsLeft.innerHTML = ++tempSecondsCounter;
-                nextSecondsLeft.classList.add('digit-dialer-left-animate');
+                nextSecondsLeft.classList.add('sec-left-dialer-next-animate');
             }
 
         }
@@ -116,15 +116,15 @@ function runSecondsClock(){
         nextSecondsRight.innerHTML = ++secondsCounter;
     }
     
-    nextSecondsRight.classList.add('digit-dialer-right-animate');
+    nextSecondsRight.classList.add('sec-right-dialer-next-animate');
 
     setTimeout(function(){
 
             currentSecondsRight.innerHTML = secondsCounter;
-            nextSecondsRight.classList.remove('digit-dialer-right-animate');
+            nextSecondsRight.classList.remove('sec-right-dialer-next-animate');
     
             currentSecondsLeft.innerHTML = tempSecondsCounter;
-            nextSecondsLeft.classList.remove('digit-dialer-left-animate');
+            nextSecondsLeft.classList.remove('sec-left-dialer-next-animate');
 
     }, 500);
 
@@ -271,7 +271,7 @@ function runHoursClock(){
 }
 
 
-// Display Area
+// Display Panel (for date-month-year)
 
 var date = rtClock.getDate();
 var month = rtClock.getMonth() + 1;
@@ -365,6 +365,7 @@ function handleClickListener(e){
 
         }
 
+        // Invalid input cases
         if(hrsInput > 23){
             showNotification('Invalid Hour Input');
             return;
